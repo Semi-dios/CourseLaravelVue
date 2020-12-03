@@ -6,7 +6,7 @@
                             <customHeader></customHeader>
                     </div>
                 </div>
-                 <div class="row">
+                <div class="row">
                     <div class="col-md-6">
                         <h1 class='text-success'>Welcome!</h1>
                         <h2>Know More About Us</h2>
@@ -20,15 +20,30 @@
                         <img src="http://themebubble.com/demo/marketingpro/wp-content/uploads/2016/10/seo-slide.png "alt="">
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <CommentD></CommentD>
+                    </div>
+                </div>
             </section>
     </div>
 </template>
 
 <script>
+import CommentD from "./layouts/comment"
 import customHeader from "./layouts/header";
     export default {
         components:{
-                customHeader
+                customHeader,
+                CommentD
+        },
+        mounted() {
+            (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://zendero.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', new Date());
+                (d.head || d.body ).appendChild(s);
+            })();
         }
     }
 </script>
